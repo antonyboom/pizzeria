@@ -1,0 +1,479 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700&subset=cyrillic,cyrillic-ext,latin-ext';
+body{
+    font-size: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+/* Global Styles */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 125px;
+    /*padding-bottom: 20px;*/
+}
+
+.dropdown {
+    cursor:pointer;
+}
+
+
+.img-home-portfolio,
+.img-customer,
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.tab-pane {
+    margin-top: 15px;
+}
+
+/* Page Sections */
+.section,
+.section-colored {
+    padding: 50px 0;
+}
+
+.section-colored {
+    background-color: #e1e1e1;
+    /* change this to change the background color of a colored section */
+}
+
+.sidebar {
+    margin-top: 40px;
+}
+
+.sidebar ul {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #cccccc;
+}
+
+/* Half Page Height Carousel Customization */
+/*.carousel {*/
+    /*height: 50%;*/
+/*}*/
+
+/*.item,*/
+/*.active,*/
+/*.carousel-inner {*/
+    /*height: 100%;*/
+/*}*/
+
+/*.fill {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+/*}*/
+
+/* Social Icons Styles */
+.list-social-icons {
+    margin-bottom: 45px;
+}
+
+.tooltip-social a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.facebook-link a:hover {
+    color: #3b5998;
+}
+
+.linkedin-link a:hover {
+    color: #007fb1;
+}
+
+.twitter-link a:hover {
+    color: #39a9e0;
+}
+
+.google-plus-link a:hover {
+    color: #d14836;
+}
+
+/* Service Page Styles */
+.service-icon {
+    font-size: 50px;
+}
+
+/* 404 Page Styles */
+.error-404 {
+    font-size: 8em;
+}
+
+/* Pricing Page Styles */
+.price {
+    font-size: 4em;
+}
+
+.price-cents {
+    vertical-align: super;
+    font-size: 50%;
+}
+
+.price-month {
+    font-size: 35%;
+    font-style: italic;
+}
+
+/* Footer Styles */
+footer {
+    height: 55px;
+    padding: 20px 0;
+    background-image: -webkit-linear-gradient(top,#0a0809 0,#222 100%);
+    background-image: -o-linear-gradient(top,#0a0809 0,#222 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#0a0809),to(#222));
+    background-image: linear-gradient(to bottom,#0a0809 0,#222 100%);
+    border-color: #080808;
+    color: #FFFFFF;;
+}
+
+/* +++++++++++++ ============= +++++++++++++ */
+/* +++++++++++++ CUSTOM STYLES +++++++++++++ */
+/* +++++++++++++ ============= +++++++++++++ */
+
+#first {
+    background-image: url(../images/back03.jpg);
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.navbar-inverse {
+    background-image: -webkit-linear-gradient(top,#222 0,#0a0809 100%);
+    background-image: -o-linear-gradient(top,#222 0,#0a0809 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#222),to(#0a0809));
+    background-image: linear-gradient(to bottom,#222 0,#0a0809 100%);
+}
+
+.border {
+    border: 1px solid #b7d02b;
+}
+
+.cafes {
+    margin-top: 10px;
+    padding: 25px;
+}
+
+.title .list-group-item:hover {
+    background-color: #b7d02b;
+}
+
+.title .list-group-item {
+    margin: 0;
+    line-height: 20px;
+    font-weight: 100;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(110, 110, 110, 0.2);
+    border: 1px solid #b7d02b;
+}
+
+.row .images img {
+    width: 100%;
+    border: 1px solid #330000;
+}
+
+.images {
+    margin: 10px 0;
+}
+
+
+@media (max-width: 1200px) and  (min-width: 992px){
+
+    .cafes {
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .address {
+        font-size: 14px!important;
+        margin-left: 90px!important;
+    }
+    .address.title {
+        font-size: 16px!important;
+    }
+}
+
+@media (max-width: 992px) and  (min-width: 768px){
+
+    .list-group.title {
+        margin: 1px;
+    }
+
+    .img-responsive {
+        width: 100%;
+    }
+
+    .cafes {
+        margin-bottom: 15px;
+        margin-top: 0px;
+        padding: 15px;
+    }
+    .address {
+        font-size: 14px!important;
+        margin-left: 155px!important;
+    }
+    .address.title {
+        font-size: 16px!important;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .navbar-fixed-top {
+        height: 125px;
+    }
+
+    .navbar-collapse {
+        margin-top: 30px;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+
+    body {
+        padding-top: 150px;
+    }
+
+    .navbar-header {
+        width: 100%;
+        height: 150px;
+        text-align:center;
+    }
+
+    .navbar-brand {
+        width: 100%;
+    }
+
+    .navbar-brand>img {
+        display: block;
+        margin: auto;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        margin-top: 115px;
+        float:none;
+        padding: 10px 0 0 4px;
+    }
+
+    .navbar-nav>li>a {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .btn-clear {
+        display: block !important;
+    }
+}
+
+
+@media (max-width: 767px) and  (min-width: 701px){
+    .address {
+        margin-left: 150px!important;
+    }
+}
+
+@media (max-width: 700px) and  (min-width: 650px){
+    .address {
+        margin-left: 125px!important;
+    }
+}
+
+@media (max-width: 600px) and  (min-width: 519px){
+    .address {
+        margin-left: 90px!important;
+    }
+}
+
+@media (max-width: 518px) {
+    .navbar-brand {
+        margin: 0;
+        padding: 0;
+    }
+    .navbar-brand>img {
+        padding: 10px 10px 10px 25px;
+        width: 100%;
+    }
+
+    .address {
+        width: 150px;
+        top: 50px!important;
+        font-size: 10px;
+        margin-left: 75px!important;
+    }
+    .address .title {
+        font-size: 12px!important;
+    }
+
+    .clipart1 {
+        height: 200px;
+    }
+    .note {
+        height: 200px!important;
+    }
+
+}
+
+
+
+.main-text
+{
+    position: absolute;
+    top: 50px;
+    width: 96.66666666666666%;
+    color: #FFF;
+}
+.btn-min-block
+{
+    min-width: 170px;
+    line-height: 26px;
+}
+.btn-clear {
+    padding: 0 10px;
+    height: 56px;
+    color: #FFF;
+    background-color: transparent;
+    border: 0px;
+    display: none;
+
+}
+.btn-clear:hover {
+    color: #000;
+    background-color: #FFF;
+    border: 0px;
+    height: 56px;
+
+
+}
+
+.panel.menu {
+    background: transparent;
+    border: 0px solid #afbd40;
+}
+
+.panel-heading.menu {
+    background-color: rgba(110, 110, 110, 0.2);
+    border: 2px solid #afbd40;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 40px;
+    height: 60px;
+    padding: 0;
+}
+
+.panel-body {
+    padding: 15px 0;
+    background-color: transparent;
+}
+
+.list-group-item.menu:hover {
+    cursor: pointer;
+    background: #afbd40;
+    color: #FFFFFF;
+
+}
+
+.list-group-item.menu {
+    margin: 0;
+    line-height: 20px;
+    font-weight: 100;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgba(214, 214, 214, 0.30);
+    border: 0px solid;
+    color: #ffffff;
+}
+
+
+.menu-screen {
+    width: 100%;
+    background-color: rgba(250, 250, 250, 0.80);
+    border: 2px solid rgba(215, 215, 215, 0.30);
+    border-radius: 1px;
+    overflow-y: scroll;
+    height: 715px;
+    padding: 25px;
+    z-index: 1;
+    color: #000000;
+}
+
+.test table {
+    width: 100%;
+}
+
+#board {
+    border: 10px solid #69423f;
+    background-image: url(../images/logo/backboard.jpg);
+    background-size: contain;
+    background-repeat: round;
+}
+
+.backboard {
+    height: 650px;
+}
+
+.clipart1 {
+    background-image: url(../images/logo/clipart.png);
+    background-size: contain;
+    background-repeat: round;
+    margin: 15px;
+}
+
+.clipart2 {
+    background-image: url(../images/logo/clipart2.png);
+    background-size: contain;
+    background-repeat: round;
+    margin: 15px;
+
+}
+
+.clipart3 {
+    background-image: url(../images/logo/clipart3.png);
+    background-size: contain;
+    background-repeat: round;
+    margin: 15px;
+
+}
+
+.clipart4 {
+    background-image: url(../images/logo/clipart4.png);
+    background-size: contain;
+    background-repeat: round;
+    margin: 15px;
+
+}
+
+
+.note {
+    color: #000000;
+    height: 325px;
+}
+
+.address {
+    line-height: initial;
+    text-align: center;
+    top: 75px;
+    margin-left: 115px;
+    width: 50%;
+    position: absolute;
+}
+
+.address .title {
+    font-size: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
