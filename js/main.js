@@ -172,8 +172,8 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window) {
     $scope.url = {};
     $scope.url.contentUrl = 'includes/pizza.html';
 
-    $scope.sushi = 'includes/sushi.jpg';
-    $scope.festival = 'includes/festival.jpg';
+    $scope.sushi = 'images/menu/sushi.jpg';
+    $scope.festival = 'images/menu/festival.jpg';
 
     $scope.selectMenu = function (id) {
 
@@ -181,13 +181,11 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window) {
             if (val.id == id){
                 $scope.url.contentUrl = val.path;
             }
-        })
+        });
 
         if ($scope.screenWidth < 992) {
-            console.log($scope.screenWidth)
             $scope.closeNavigator()
         }
-
     };
 
     $scope.screenWidth = $window.innerWidth;
@@ -209,7 +207,6 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window) {
         $scope.isCollapsedMenu = true;
         $scope.navigatorButton = false;
 
-
     };
 
     $scope.closeNavigator = function () {
@@ -218,11 +215,6 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window) {
         $scope.isCollapsedMenu = false;
         $scope.navigatorButton = true;
 
-
     };
-
-
-
-
 
 });
