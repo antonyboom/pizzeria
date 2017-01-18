@@ -16,7 +16,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 
-app.controller('PageCtrl', function ($scope, $location, $http, $window) {
+app.controller('PageCtrl', function ($scope, $location, $http, $window, $interval) {
 
     $(document).ready(function() {
         $('.carousel').carousel({interval: 3000});
@@ -186,7 +186,31 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window) {
         if ($scope.screenWidth < 992) {
             $scope.closeNavigator()
         }
+
+        $interval(function () {
+            $scope.clean()
+        }, 0, 1)
     };
+
+    $scope.clean = function () {
+        var em = document.getElementsByTagName('em');
+        var reg = /\./g;
+
+        angular.forEach(em, function (item) {
+
+            if(item.innerText.match(reg)){
+
+                item.innerText = process(item.innerText)
+
+            }
+        });
+    };
+
+    function process( str ) {
+        return str.replace( /^([^.]*\.)(.*)$/, function ( a, b, c ) {
+            return b + c.replace( /\./g, '' );
+        });
+    }
 
     $scope.screenWidth = $window.innerWidth;
 
