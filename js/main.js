@@ -188,9 +188,11 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
         }
 
         $interval(function () {
-            $scope.clean()
-        }, 0, 1)
+            $scope.clean();
+        }, 0, 3)
     };
+
+    $scope.selectMenu(0);
 
     $scope.clean = function () {
         var em = document.getElementsByTagName('em');
@@ -199,9 +201,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
         angular.forEach(em, function (item) {
 
             if(item.innerText.match(reg)){
-
-                item.innerText = process(item.innerText)
-
+                 item.innerText = process(item.innerText)
             }
         });
     };
