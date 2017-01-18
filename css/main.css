@@ -339,6 +339,29 @@ footer {
 
 }
 
+@media (max-width: 517px) and (min-width: 401px) {
+    .address {
+        margin-left: 70px!important;
+    }
+}
+
+@media (max-width: 400px) and (min-width: 351px) {
+    .address {
+        margin-left: 55px!important;
+    }
+}
+
+@media (max-width: 350px)  {
+
+    .address {
+        font-size: 9px;
+        margin-left: 45px!important;
+    }
+    .address .title {
+        font-size: 10px!important;
+    }
+}
+
 
 
 .main-text
