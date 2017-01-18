@@ -364,24 +364,24 @@ footer {
 
 a:link {
     text-decoration: none;
-    color: inherit;
+    color: black;
 }
 
 a:visited {
     text-decoration: none;
-    color: inherit;
+    color: black;
 
 }
 
 a:hover {
     text-decoration: underline;
-    color: inherit;
+    color: black;
 
 }
 
 a:active {
     text-decoration: none;
-    color: inherit;
+    color: black;
 
 }
 
