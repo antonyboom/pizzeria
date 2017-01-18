@@ -362,11 +362,35 @@ footer {
     }
 }
 
+a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+a:hover {
+    text-decoration: underline;
+    color: inherit;
+
+}
+
+a:active {
+    text-decoration: none;
+    color: inherit;
+
+}
+
 
 
 .main-text
 {
     position: absolute;
+
     top: 50px;
     width: 96.66666666666666%;
     color: #FFF;
