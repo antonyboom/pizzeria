@@ -151,6 +151,13 @@ footer {
     background-image: linear-gradient(to bottom,#222 0,#0a0809 100%);
 }
 
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+     background-color: transparent;
+}
+.navbar-inverse .navbar-toggle {
+     border-color: transparent;
+}
+
 .border {
     border: 1px solid #b7d02b;
 }
@@ -241,12 +248,12 @@ footer {
 @media (max-width: 767px) {
 
     body {
-        padding-top: 150px;
+        padding-top: 100px;
     }
 
     .navbar-header {
         width: 100%;
-        height: 150px;
+        height: 100px;
         text-align:center;
     }
 
@@ -261,9 +268,9 @@ footer {
 
     .navbar-toggle {
         position: absolute;
-        margin-top: 115px;
+        margin-top: 65px;
         float:none;
-        padding: 10px 0 0 4px;
+        padding: 10px 3px 0 3px;
     }
 
     .navbar-nav>li>a {
