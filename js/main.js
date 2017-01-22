@@ -188,20 +188,24 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
         }
 
         $interval(function () {
-            $scope.clean();
+            $scope.cleanText();
+            $scope.cleanHtml();
         }, 0, 5)
     };
 
     $scope.selectMenu(0);
 
-    $scope.clean = function () {
-        var em = document.getElementsByTagName('em');
+    $scope.em = document.getElementsByTagName('em');
 
-        angular.forEach(em, function (item) {
+    $scope.cleanText = function () {
+        angular.forEach($scope.em, function (item) {
             if(item.innerText){
                 item.innerText = process(item.innerText);
             }
-
+        });
+    };
+    $scope.cleanHtml = function () {
+        angular.forEach($scope.em, function (item) {
             if(item.innerHTML){
                 item.innerHTML = process(item.innerHTML);
             }
