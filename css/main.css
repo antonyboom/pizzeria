@@ -339,6 +339,9 @@ footer {
     .mobile {
         display: none;
     }
+    table {
+        font-size: 10px !important;
+    }
 
 }
 
