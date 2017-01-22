@@ -179,6 +179,8 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
     $scope.selectMenu = function (id) {
 
+        $scope.selected = id;
+
         angular.forEach($scope.urls, function (val) {
             if (val.id == id){
                 $scope.url.contentUrl = val.path;

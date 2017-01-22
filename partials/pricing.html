@@ -16,8 +16,8 @@
                         </div>
                         <div class="panel-body" id="navigator" uib-collapse="isCollapsedNavigator">
                             <div class="list-group">
-                                <a ng-repeat="item in menuNames"class="list-group-item menu" ng-click="selectMenu(item.id)">
-                                    <div >{{item.name}}</div>
+                                <a ng-repeat="item in menuNames"class="list-group-item menu"  ng-click="selectMenu(item.id)">
+                                    <div ng-class="{'itemActive': item.id == selected}">{{item.name}}</div>
                                 </a>
                             </div>
                         </div>
