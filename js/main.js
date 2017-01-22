@@ -9,14 +9,27 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
     // Pages
-    .when("/menu", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
+    .when("/menu", {
+        templateUrl: "partials/pricing.html",
+        controller: "PageCtrl"
+    })
     .when("/home", {templateUrl: "partials/home.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
     // else 404
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 
+app.run(function($rootScope, $location) {
+    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+
+        if (next.$$route.originalPath == '/menu'){
+            $rootScope.refresh()
+        }
+    })
+});
+
 app.controller('PageCtrl', function ($scope, $location, $http, $window, $interval, $rootScope) {
+
 
     $(document).ready(function() {
         $('.carousel').carousel({interval: 3000});
@@ -193,11 +206,16 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
         $interval(function () {
             $scope.cleanText();
-        }, 10, 10)
+        }, 0, 10)
 
     };
 
-    $scope.selectMenu(0);
+    $rootScope.refresh = function () {
+        $interval(function () {
+            $scope.selectMenu(0);
+        }, 0, 2)
+    };
+
 
     $scope.cleanText = function () {
         angular.forEach($scope.em, function (item) {
