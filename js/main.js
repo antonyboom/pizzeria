@@ -189,27 +189,27 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
         $interval(function () {
             $scope.clean();
-        }, 0, 3)
+        }, 0, 5)
     };
 
     $scope.selectMenu(0);
 
     $scope.clean = function () {
         var em = document.getElementsByTagName('em');
-        var reg = /\./g;
 
         angular.forEach(em, function (item) {
+            if(item.innerText){
+                item.innerText = process(item.innerText);
+            }
 
-            if(item.innerText.match(reg)){
-                 item.innerText = process(item.innerText)
+            if(item.innerHTML){
+                item.innerHTML = process(item.innerHTML);
             }
         });
     };
 
     function process( str ) {
-        return str.replace( /^([^.]*\.)(.*)$/, function ( a, b, c ) {
-            return b + c.replace( /\./g, '' );
-        });
+        return str.replace(/\u2026/g, '').replace(/\.\.+/g, '');
     }
 
     $scope.screenWidth = $window.innerWidth;
