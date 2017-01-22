@@ -213,14 +213,16 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
     $scope.$watch('url', function(newVal, oldVal){
         if (newVal) {
-            $scope.cleanText();
+            $interval(function () {
+                $scope.cleanText();
+            }, 23, 10)
         }
     }, true);
 
     $rootScope.refresh = function () {
         $interval(function () {
             $scope.selectMenu(0);
-        }, 0, 2)
+        }, 23, 10)
     };
 
 
