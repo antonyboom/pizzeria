@@ -336,6 +336,9 @@ footer {
     .note {
         height: 200px!important;
     }
+    .mobile {
+        display: none;
+    }
 
 }
 
