@@ -208,7 +208,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
         $interval(function () {
             $scope.cleanText();
-        }, 100, 10)
+        }, 0, 10)
     };
 
     $scope.$watch('url', function(newVal, oldVal){
