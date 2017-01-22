@@ -187,10 +187,19 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
             $scope.closeNavigator()
         }
 
-        $interval(function () {
-            $scope.cleanText();
-            $scope.cleanHtml();
-        }, 0, 5)
+        if ($scope.screenWidth < 500) {
+            $interval(function () {
+                $scope.cleanText();
+                $scope.cleanHtml();
+            }, 100, 10)
+        } else {
+            $interval(function () {
+                $scope.cleanText();
+                $scope.cleanHtml();
+            }, 0, 5)
+        }
+
+
     };
 
     $scope.selectMenu(0);
