@@ -193,7 +193,6 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
         $interval(function () {
             $scope.cleanText();
-            $scope.cleanHtml();
         }, 10, 10)
 
     };
@@ -206,6 +205,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
                 item.innerText = process(item.innerText);
             }
         });
+        $scope.cleanHtml()
     };
     $scope.cleanHtml = function () {
         angular.forEach($scope.em, function (item) {
