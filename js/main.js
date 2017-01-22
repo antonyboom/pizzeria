@@ -19,11 +19,13 @@ app.config(['$routeProvider', function ($routeProvider) {
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 
-app.run(function($rootScope, $location) {
+app.run(function($rootScope, $location, $timeout) {
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
 
         if (next.$$route.originalPath == '/menu'){
-            $rootScope.refresh()
+            $timeout(function () {
+                $rootScope.refresh()
+            }, 100)
         }
     })
 });
@@ -49,7 +51,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
             name: "Пиццерия г.Запрудня"
         }, {
             id: 4,
-            name: "Десертонни"
+            name: "Десертони"
         }];
 
     $scope.types = [{
@@ -206,9 +208,14 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
         $interval(function () {
             $scope.cleanText();
-        }, 0, 10)
-
+        }, 100, 10)
     };
+
+    $scope.$watch('url', function(newVal, oldVal){
+        if (newVal) {
+            $scope.cleanText();
+        }
+    }, true);
 
     $rootScope.refresh = function () {
         $interval(function () {
