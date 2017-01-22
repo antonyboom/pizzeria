@@ -16,7 +16,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 
-app.controller('PageCtrl', function ($scope, $location, $http, $window, $interval) {
+app.controller('PageCtrl', function ($scope, $location, $http, $window, $interval, $rootScope) {
 
     $(document).ready(function() {
         $('.carousel').carousel({interval: 3000});
@@ -175,6 +175,8 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
     $scope.sushi = 'images/menu/sushi.jpg';
     $scope.festival = 'images/menu/festival.jpg';
 
+    $scope.em = document.getElementsByTagName('em');
+
     $scope.selectMenu = function (id) {
 
         angular.forEach($scope.urls, function (val) {
@@ -187,24 +189,14 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
             $scope.closeNavigator()
         }
 
-        if ($scope.screenWidth < 500) {
-            $interval(function () {
-                $scope.cleanText();
-                $scope.cleanHtml();
-            }, 100, 10)
-        } else {
-            $interval(function () {
-                $scope.cleanText();
-                $scope.cleanHtml();
-            }, 0, 5)
-        }
-
+        $interval(function () {
+            $scope.cleanText();
+            $scope.cleanHtml();
+        }, 10, 10)
 
     };
 
     $scope.selectMenu(0);
-
-    $scope.em = document.getElementsByTagName('em');
 
     $scope.cleanText = function () {
         angular.forEach($scope.em, function (item) {
@@ -229,29 +221,21 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
     $scope.isCollapsedNavigator = false;
     $scope.isCollapsedMenu = false;
-    $scope.navigatorButton = false;
 
     if ($scope.screenWidth < 992){
-
-        $scope.isCollapsedNavigator = true;
-        $scope.navigatorButton = true;
+        $scope.isCollapsedNavigator = false;
+        $scope.isCollapsedMenu = true;
 
     }
 
     $scope.showNavigator = function () {
-
         $scope.isCollapsedNavigator = false;
         $scope.isCollapsedMenu = true;
-        $scope.navigatorButton = false;
-
     };
 
     $scope.closeNavigator = function () {
-
         $scope.isCollapsedNavigator = true;
         $scope.isCollapsedMenu = false;
-        $scope.navigatorButton = true;
-
     };
 
 });
