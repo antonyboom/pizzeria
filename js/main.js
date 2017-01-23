@@ -210,21 +210,21 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
         $interval(function () {
             $scope.cleanText();
-        }, 23, 10)
+        }, 0, 5)
     };
 
     $scope.$watch('url', function(newVal, oldVal){
         if (newVal) {
             $interval(function () {
                 $scope.cleanText();
-            }, 23, 10)
+            }, 0, 5)
         }
     }, true);
 
     $rootScope.refresh = function () {
         $interval(function () {
             $scope.selectMenu(0);
-        }, 23, 10)
+        }, 0, 5)
     };
 
 
@@ -252,12 +252,6 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
 
     $scope.isCollapsedNavigator = false;
     $scope.isCollapsedMenu = false;
-
-    if ($scope.screenWidth < 992){
-        $scope.isCollapsedNavigator = false;
-        $scope.isCollapsedMenu = true;
-
-    }
 
     $scope.showNavigator = function () {
         $scope.isCollapsedNavigator = false;
