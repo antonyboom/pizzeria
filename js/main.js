@@ -1,7 +1,9 @@
 var app = angular.module('pizza', [
     'ngRoute',
     'ui.bootstrap',
-    'ngTouch'
+    'ngTouch',
+    'ngAnimate'
+
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {

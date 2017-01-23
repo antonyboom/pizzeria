@@ -11,6 +11,11 @@ html, body {
 }
 
 body {
+    background-image: url(../images/back03.jpg);
+    background-color: #0a0809;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
     padding-top: 125px;
 }
 
@@ -109,7 +114,7 @@ footer {
     background-image: -webkit-gradient(linear,left top,left bottom,from(#0a0809),to(#222));
     background-image: linear-gradient(to bottom,#0a0809 0,#222 100%);
     border-color: #080808;
-    color: #FFFFFF;;
+    color: #FFFFFF;
 }
 
 /* +++++++++++++ ============= +++++++++++++ */
@@ -117,10 +122,8 @@ footer {
 /* +++++++++++++ ============= +++++++++++++ */
 
 #first {
-    background-image: url(../images/back03.jpg);
     width: 100%;
     height: auto;
-    background-size: cover;
     color: #FFFFFF;
 }
 
@@ -537,4 +540,75 @@ a:active {
 .address .title {
     font-size: 20px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+
+/* ================ */
+/*     Animation    */
+/* ================ */
+
+/*  main ng-view Animation  */
+.view-slide-in.ng-enter {
+    transition: all 1s ease;
+    -webkit-transition:all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+
+    opacity:0.5;
+    position:relative;
+    opacity:0;
+    top:0px;
+    left:0px;
+}
+.view-slide-in.ng-enter {
+    opacity: 0;
+}
+.view-slide-in.ng-enter.ng-enter-active {
+    top:0;
+    left:0;
+    opacity: 1;
+}
+
+.view-slide-in.ng-leave.ng-leave-active{
+    top:5px;
+    left:5px;
+    opacity:1;
+}
+.view-slide-in.ng-leave{
+    top:0;
+    left:0;
+    opacity:0;
+}
+
+/*  menu ng-include Animation  */
+.menu-slide-in.ng-enter {
+    transition: all 1s ease;
+    -webkit-transition:all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+
+    opacity:0.5;
+    position:relative;
+    opacity:0;
+    top:0px;
+    left:-100%;
+}
+.menu-slide-in.ng-enter {
+    opacity: 0;
+}
+.menu-slide-in.ng-enter.ng-enter-active {
+    top:0;
+    left:0;
+    opacity: 1;
+}
+
+.menu-slide-in.ng-leave.ng-leave-active{
+    top:5px;
+    left:5px;
+    opacity:1;
+}
+.menu-slide-in.ng-leave{
+    top:0;
+    left:0;
+    opacity:0;
 }
