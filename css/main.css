@@ -5,9 +5,9 @@ body{
 }
 
 /* Global Styles */
-
-html, body {
-    height: 100%;
+html{
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -20,9 +20,10 @@ body {
 
     background-repeat: inherit;
 
-    height: 100%;
+    position: relative;
+    height:100%; /* force the BODY element to match the height of the HTML element */
     padding-top: 125px;
-
+    padding-bottom: 55px;
 }
 
 .dropdown {
@@ -121,6 +122,10 @@ footer {
     background-image: linear-gradient(to bottom,#0a0809 0,#222 100%);
     border-color: #080808;
     color: #FFFFFF;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 /* +++++++++++++ ============= +++++++++++++ */
@@ -702,4 +707,80 @@ a:active {
 }
 .nav-li {
     text-align: center;
+}
+
+/* ================= */
+/*  Login and Admin  */
+/* ================= */
+
+.parentDiv{
+    height:100%;
+    min-height: 100%;
+    margin:0 auto;
+}
+
+.loginForm{
+    width:25%;
+    margin:0 auto;
+}
+.loginButton {
+    width: 100%;
+}
+
+.btn-success {
+    background-image: -webkit-linear-gradient(top,#b7d02d 10%,#b8374f 100%);
+    background-image: -o-linear-gradient(top,#b7d02d 10%,#b8374f 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#b7d02d),to(#b8374f));
+    background-image: linear-gradient(to bottom,#b7d02d 10%,#b8374f 100%);
+    background-repeat: repeat-x;
+    border-color: #b7d02d;
+}
+
+.btn-success:hover {
+    background-image: -webkit-linear-gradient(top,#b8374f 10%,#b7d02d 100%);
+    background-image: -o-linear-gradient(top,#b8374f 10%,#b7d02d 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#b8374f),to(#b7d02d));
+    background-image: linear-gradient(to bottom,#b8374f 10%,#b7d02d 100%);
+    background-repeat: repeat-x;
+    border-color: #b8374f;
+    background-position: 0
+}
+
+.cards {
+    text-align: center;
+    display: inline-block;
+}
+.card_background {
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 150px;
+    height: 150px;
+    background-color: #b7d02d;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    /*TEXT SETTINGS*/
+    color: black;
+    vertical-align: top;
+}
+
+.card_background:hover {
+    background-color: #b8374f;
+    color: white;
+}
+.card_title {
+    letter-spacing: -1px;
+    font-size: 100%;
+    text-align: center;
+    padding: 45px 0
+}
+
+.template {
+    height: 400px;
+    overflow: scroll;
+}
+
+.wordArea {
+    height: 400px;
+    width: 100%;
 }

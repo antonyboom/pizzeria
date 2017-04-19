@@ -1,0 +1,42 @@
+<div id="first">
+
+    <div class="section">
+
+        <div class="container">
+
+            <div class="row">
+
+                <br>
+                <br>
+                <br>
+
+                <div class="col-md-12 parentDiv">
+                    <form ng-submit="formSubmit()" class="loginForm">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" ng-model="username" placeholder="username" required=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" ng-model="password" placeholder="password" required=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success loginButton">Login</button>
+                            </div>
+                            <hr ng-if="error">
+                            <div ng-if="error" class="alert alert-warning text-danger">{{ error }}</div>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+

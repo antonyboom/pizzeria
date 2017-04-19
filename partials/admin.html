@@ -1,0 +1,48 @@
+<div id="first">
+
+    <div class="section">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="cards" class="template" ng-if="!templateHtml">
+                        <div ng-repeat="template in menuTemplates" class="card_background" ng-click="loadTemplate(template)">
+                            <div class="card_title">{{template.name}}</div>
+                        </div>
+                    </div>
+
+                    <div class="replace"  ng-if="templateHtml">
+                        <div class="col-md-6">
+                            <textarea name="" id="" class="wordArea"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="template" >
+                                <pre ng-include src="templateHtml">
+
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" ng-if="templateHtml" >
+                        <a href="#/admin" class="btn btn-danger">
+                            back
+                        </a>
+                        <button  class="btn btn-warning pull-right"> replace </button>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
