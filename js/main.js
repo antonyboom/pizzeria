@@ -6,22 +6,23 @@ var app = angular.module('pizza', [
 
 ]);
 
+app.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+}]);
+
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-
         .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
         .when("/home", {templateUrl: "partials/home.html", controller: "PageCtrl"})
         .when("/menu", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
         .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
-        .when("/login", {templateUrl: "partials/login.html", controller: "LoginCtrl"})
-        .when("/admin", {templateUrl: "partials/admin.html", controller: "AdminCtrl"})
         .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 
 app.run(function ($rootScope, $location, $timeout) {
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
 
-        if (next.$$route.originalPath == '/menu') {
+        if (next.$$route.originalPath === '/menu') {
             $timeout(function () {
                 $rootScope.refresh()
             }, 100)
@@ -371,13 +372,5 @@ app.controller('AdminCtrl', function ($scope, $rootScope, $location, $timeout) {
 
     $scope.loadTemplate = function (item) {
         $scope.templateHtml = item.path;
-
-        console.log($scope.templateHtml)
     }
-
-    // $scope.getBack = function () {
-    //     $timeout(function () {
-    //         $location.path('/admin');
-    //     }, 0);    }
-
 });
