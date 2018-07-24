@@ -33,7 +33,7 @@ app.run(function ($rootScope, $location, $timeout) {
     })
 });
 
-app.controller('PageCtrl', function ($scope, $location, $http, $window, $interval, $rootScope) {
+app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window, $interval, $rootScope) {
 
     $(document).ready(function () {
         $('.carousel').carousel({interval: 3000});
@@ -85,108 +85,116 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
     $scope.menuNames = [
         {
             id: 0,
+            name: 'НОВИНКИ МЕНЮ'
+        },
+        // {
+        //     id: 1,
+        //     name: 'ПОСТНОЕ МЕНЮ'
+        // },
+        {
+            id: 2,
             name: "ПИЦЦА"
         }, {
-            id: 1,
+            id: 3,
             name: 'СУПЫ'
         }, {
-            id: 2,
+            id: 4,
             name: 'САЛАТЫ'
         }, {
-            id: 3,
+            id: 5,
             name: 'ГОРЯЧИЕ БЛЮДА'
         }, {
-            id: 4,
+            id: 6,
             name: 'БЛЮДА ИЗ МОРЕПРОДУКТОВ'
         }, {
-            id: 5,
+            id: 7,
             name: 'БЛЮДА ИЗ ОВОЩЕЙ'
         }, {
-            id: 6,
+            id: 8,
             name: 'ПАСТА'
         }, {
-            id: 7,
+            id: 9,
             name: 'ХОЛОДНЫЕ ЗАКУСКИ'
         }, {
-            id: 8,
+            id: 10,
             name: 'ГОРЯЧИЕ ЗАКУСКИ'
         }, {
-            id: 9,
+            id: 11,
             name: 'ГАРНИР'
         }, {
-            id: 10,
+            id: 12,
             name: 'ДЕСЕРТЫ'
         }, {
-            id: 11,
+            id: 13,
             name: 'НАПИТКИ'
         }, {
-            id: 12,
+            id: 14,
             name: 'АЛКОГОЛЬ'
         }, {
-            id: 13,
+            id: 15,
             name: 'ВАРЕНИКИ'
         }, {
-            id: 14,
+            id: 16,
             name: 'СУШИ'
-        }, {
-            id: 15,
-            name: 'ФЕСТИВАЛЬ МИРОВАЯ КУХНЯ'
         }
     ];
     $scope.urls = [
         {
             id: 0,
-            path: 'includes/pizza.html'
+            path: 'includes/news.html'
         }, {
             id: 1,
-            path: 'includes/soup.html'
+            path: 'includes/post.html'
         }, {
             id: 2,
-            path: 'includes/salads.html'
+            path: 'includes/pizza.html'
         }, {
             id: 3,
-            path: 'includes/entrees.html'
+            path: 'includes/soup.html'
         }, {
             id: 4,
-            path: 'includes/fish-entrees.html'
+            path: 'includes/salads.html'
         }, {
             id: 5,
-            path: 'includes/vegetables-entrees.html'
+            path: 'includes/entrees.html'
         }, {
             id: 6,
-            path: 'includes/spaghetti.html'
+            path: 'includes/fish-entrees.html'
         }, {
             id: 7,
-            path: 'includes/cold-appetizers.html'
+            path: 'includes/vegetables-entrees.html'
         }, {
             id: 8,
-            path: 'includes/hot-appetizers.html'
+            path: 'includes/spaghetti.html'
         }, {
             id: 9,
-            path: 'includes/sides.html'
+            path: 'includes/cold-appetizers.html'
         }, {
             id: 10,
-            path: 'includes/deserts.html'
+            path: 'includes/hot-appetizers.html'
         }, {
             id: 11,
-            path: 'includes/drinks.html'
+            path: 'includes/sides.html'
         }, {
             id: 12,
-            path: 'includes/alco.html'
+            path: 'includes/deserts.html'
         }, {
             id: 13,
-            path: 'includes/ravioli.html'
+            path: 'includes/drinks.html'
         }, {
             id: 14,
-            path: 'includes/sushi.html'
+            path: 'includes/alco.html'
         }, {
             id: 15,
-            path: 'includes/festival.html'
+            path: 'includes/ravioli.html'
+        }, {
+            id: 16,
+            path: 'includes/sushi.html'
         }
     ];
 
+
     $scope.url = {};
-    $scope.url.contentUrl = 'includes/pizza.html';
 
     $scope.sushi = 'images/menu/sushi.jpg';
     $scope.festival = 'images/menu/festival.jpg';
@@ -198,8 +206,8 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
         $scope.selected = id;
 
         angular.forEach($scope.urls, function (val) {
-            if (val.id == id) {
-                $scope.url.contentUrl = val.path;
+            if (val.id === id) {
+                return $scope.url.contentUrl = val.path;
             }
         });
 
@@ -210,6 +218,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
         $interval(function () {
             $scope.cleanText();
         }, 0, 5)
+
     };
 
     $scope.$watch('url', function (newVal, oldVal) {
@@ -223,7 +232,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
     $rootScope.refresh = function () {
         $interval(function () {
             $scope.selectMenu(0);
-        }, 0, 5)
+        }, 0, 3)
     };
 
 
@@ -261,6 +270,35 @@ app.controller('PageCtrl', function ($scope, $location, $http, $window, $interva
         $scope.isCollapsedNavigator = true;
         $scope.isCollapsedMenu = false;
     };
+
+    $scope.navigateTo = function (path) {
+
+        $location.path('/menu');
+
+        switch (true) {
+            case path === 'new':
+                $timeout(function () {
+                    $scope.selectMenu(0);
+                }, 350);
+                break;
+            case path === 'post':
+                $timeout(function () {
+                    $scope.selectMenu(1);
+                }, 350);
+                break;
+            case path === 'sushi':
+                $timeout(function () {
+                    $scope.selectMenu(16);
+                }, 350);
+                break;
+            case path === 'des':
+                $timeout(function () {
+                    $scope.selectMenu(12);
+                }, 350);
+                break;
+        }
+
+    }
 });
 
 app.controller('LoginCtrl', function ($scope, $rootScope, LoginService, $location) {

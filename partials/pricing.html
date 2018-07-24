@@ -16,15 +16,19 @@
                         </div>
                         <div class="panel-body" id="navigator" uib-collapse="isCollapsedNavigator">
                             <div class="list-group">
-                                <a ng-repeat="item in menuNames"class="list-group-item menu"  ng-click="selectMenu(item.id)">
-                                    <div ng-class="{'itemActive': item.id == selected}">{{item.name}}</div>
+                                <a ng-repeat="item in menuNames track by $index"
+                                   class="list-group-item menu"
+                                   ng-click="selectMenu(item.id)">
+                                    <div ng-class="{'itemActive': item.id === selected}">{{item.name}}</div>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-12 col-xs-12">
-                    <div uib-collapse="isCollapsedMenu" class="menu-screen menu-slide-in" ng-include="url.contentUrl" onload="cleanText()"></div>
+                    <div uib-collapse="isCollapsedMenu"
+                         class="menu-screen menu-slide-in"
+                         ng-include="url.contentUrl" onload="cleanText()"></div>
                 </div>
             </div>
 
