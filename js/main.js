@@ -6,7 +6,14 @@ var app = angular.module('pizza', [
 
 ]);
 
-app.config(['$locationProvider', function($locationProvider) {
+app.config(function ($httpProvider) {
+    $httpProvider.defaults.headers.get = {
+        'Cache-Control': 'no-cache'
+    };
+});
+
+
+app.config(['$locationProvider', function ($locationProvider) {
     $locationProvider.hashPrefix('');
 }]);
 
@@ -55,22 +62,24 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
         id: 4,
         name: "Десертони"
     }];
-    $scope.types = [{
-        id: 0,
-        path: "images/pizza1.jpg"
-    }, {
-        id: 1,
-        path: "images/pizza2.jpg"
-    }, {
-        id: 2,
-        path: "images/pizza3.jpg"
-    }, {
-        id: 3,
-        path: "images/pizza4.jpg"
-    }, {
-        id: 4,
-        path: "images/pizza5.jpg"
-    }];
+    $scope.types = [
+        {
+            id: 0,
+            path: "images/pizza1.jpg"
+        },
+        {
+            id: 1,
+            path: "images/pizza2.jpg"
+        }, {
+            id: 2,
+            path: "images/pizza3.jpg"
+        }, {
+            id: 3,
+            path: "images/pizza4.jpg"
+        }, {
+            id: 4,
+            path: "images/pizza5.jpg"
+        }];
 
     $scope.image = $scope.types[0].path;
 
@@ -83,10 +92,10 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
     };
 
     $scope.menuNames = [
-        {
-            id: 0,
-            name: 'НОВИНКИ МЕНЮ'
-        },
+        // {
+        //     id: 0,
+        //     name: 'НОВИНКИ МЕНЮ'
+        // },
         // {
         //     id: 1,
         //     name: 'ПОСТНОЕ МЕНЮ'
@@ -316,7 +325,6 @@ app.controller('LoginCtrl', function ($scope, $rootScope, LoginService, $locatio
     };
 
 });
-
 
 app.factory('LoginService', function () {
 
