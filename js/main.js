@@ -148,13 +148,14 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
         }
     ];
     $scope.urls = [
+        // {
+        //     id: 0,
+        //     path: 'includes/news.html'
+        // }, {
+        //     id: 1,
+        //     path: 'includes/post.html'
+        // },
         {
-            id: 0,
-            path: 'includes/news.html'
-        }, {
-            id: 1,
-            path: 'includes/post.html'
-        }, {
             id: 2,
             path: 'includes/pizza.html'
         }, {
