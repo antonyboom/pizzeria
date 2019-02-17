@@ -66,8 +66,7 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
         {
             id: 0,
             path: "images/pizza1.jpg"
-        },
-        {
+        }, {
             id: 1,
             path: "images/pizza2.jpg"
         }, {
@@ -92,10 +91,10 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
     };
 
     $scope.menuNames = [
-        // {
-        //     id: 0,
-        //     name: 'НОВИНКИ МЕНЮ'
-        // },
+        {
+            id: 0,
+            name: 'НОВИНКИ МЕНЮ'
+        },
         // {
         //     id: 1,
         //     name: 'ПОСТНОЕ МЕНЮ'
@@ -148,10 +147,11 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
         }
     ];
     $scope.urls = [
+        {
+            id: 0,
+            path: 'includes/news.html'
+        },
         // {
-        //     id: 0,
-        //     path: 'includes/news.html'
-        // }, {
         //     id: 1,
         //     path: 'includes/post.html'
         // },
