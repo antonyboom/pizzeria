@@ -95,10 +95,10 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
             id: 0,
             name: 'НОВИНКИ МЕНЮ'
         },
-        // {
-        //     id: 1,
-        //     name: 'ПОСТНОЕ МЕНЮ'
-        // },
+        {
+            id: 1,
+            name: 'ПОСТНОЕ МЕНЮ'
+        },
         {
             id: 2,
             name: "ПИЦЦА"
@@ -151,10 +151,10 @@ app.controller('PageCtrl', function ($scope, $location, $timeout, $http, $window
             id: 0,
             path: 'includes/news.html'
         },
-        // {
-        //     id: 1,
-        //     path: 'includes/post.html'
-        // },
+        {
+            id: 1,
+            path: 'includes/post.html'
+        },
         {
             id: 2,
             path: 'includes/pizza.html'
